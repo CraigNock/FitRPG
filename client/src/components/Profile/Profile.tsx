@@ -16,5 +16,5 @@ const Profile : React.FC<PropsWithChildren<props>> = () => {
 export default Profile;
 
 const Wrapper = styled.div`
-
+  color: whitesmoke;
 `;

@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Global from '../../GlobalStyles';
 
+import Profile from '../Profile';
+
 const App = () => {
   return (
     <Wrapper>
       <Global />
-      <div>
-        AAAAAPPPPPP
-      </div>
+      <Profile/>
     </Wrapper>
   );
 };
