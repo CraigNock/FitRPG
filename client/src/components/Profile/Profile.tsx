@@ -27,11 +27,17 @@ const Profile : React.FC<PropsWithChildren<props>> = () => {
 
   return (
     <Wrapper>
-      Profile
-      <Atonomy/>
-      <ProgressBar>
-        <Progress style={{width:'70%'}}/>
-      </ProgressBar>
+      <TopBar>
+        <p>Profile</p>
+      </TopBar>
+
+      <Content>
+        <Anatomy/>
+        <ProgressBar>
+          <Progress style={{width:'70%'}}/>
+        </ProgressBar>
+      </Content>
+      
       <ButtonBar>
         <StyledButton>
           Continue Journey
@@ -56,26 +62,45 @@ const Wrapper = styled.div`
   color: whitesmoke;
   width: 100vw;
   height: 100vh;
-
+  display: grid;
+  grid-template-areas:
+    'head'
+    'content'
+    'menu';
+  /* grid-template-rows: 1fr 6fr 0.3fr; */
+  /* grid-template-columns: 1.2fr 6fr 2fr; */
 `;
-
-const Atonomy = styled.div`
+const TopBar = styled.div`
+  width: 100%;
+  height: 2rem;
+  grid-area: head;
+  background: goldenrod;
+  p {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+`;
+const Content = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-
+  grid-area: content;
 `;
 const ProgressBar = styled.div`
-  margin: 1rem auto;
+  width: 50%;
+  height: 1.5rem;
+  margin: .5rem auto;
+  border: 1px solid whitesmoke;
 `;
 const Progress = styled.div`
   height: 100%;
   background: forestgreen;
 `;
-
 const ButtonBar = styled.div`
   width: 100%;
   height: 3rem;
+  grid-area: menu;
   border-top: 1px solid black;
 `;
 const StyledButton = styled.button`
